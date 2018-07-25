@@ -14,6 +14,8 @@
     "build": "ember build",
     "ember": "ember serve",
     "lint:js": "eslint .",
+    "rebuild": "electron-rebuild -f -w sqlite3",
+    "reset:database": "cd ./ember-electron/database && rm ./EmberElectronSQL_empty.sqlite && knex migrate:latest",
     "start": "ember electron",
     "test": "ember test"
   },
@@ -57,7 +59,9 @@
   "dependencies": {
     "electron-compile": "^6.4.3",
     "electron-protocol-serve": "^1.3.0",
-    "electron-squirrel-startup": "^1.0.0"
+    "electron-squirrel-startup": "^1.0.0",
+    "knex": "0.13",
+    "sqlite3": "^4.0.2"
   },
   "config": {
     "forge": "./ember-electron/electron-forge-config.js"
