@@ -1,0 +1,30 @@
+<div class="container">
+  <div class="row">
+    <div class="d-flex col pt-3 pb-3">
+      <h1>TASKS</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="d-flex col justify-content-between pb-3">
+      {{input value=newTask size="33"}}
+      {{#bs-button type="outline-primary" }}NEW{{/bs-button}}
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="d-felx col pb-3">
+      <ul class="list-group">
+        {{! Loop over the model data array, using task as the singular }}
+        {{#each model as |task|}}
+          <li class="list-group-item justify-content-between d-flex">
+            <span>{{task.title}}</span>
+            {{#bs-button class="btn-sm" type="danger" }}DELETE{{/bs-button}}
+          </li>
+        {{/each}}
+
+      </ul>
+    </div>
+  </div>
+</div>
+
+{{outlet}}

@@ -8,8 +8,7 @@ Scaffold out a new [ember](https://www.emberjs.com/) app
 Disable ember-cli google anaylitics
 
 _./ember-cli_
-~~~ json 
-
+~~~json
 -  /**
 -    Ember CLI sends analytics information by default. The data is completely
 -    anonymous, but there are times when you might want to disable this behavior.
@@ -19,7 +18,6 @@ _./ember-cli_
  {
 +  "disableAnalytics": true
  }
-
 ~~~
 
 Check everything works
@@ -42,8 +40,7 @@ Scaffold out [Ember Electron](https://ember-electron.js.org/)
 Update npm run scripts to start ember electron
 
 _./package.json_
-~~~ javascript
-
+~~~json
 "scripts": {
     "build": "ember build",
     "ember": "ember serve",
@@ -51,7 +48,6 @@ _./package.json_
     "start": "ember electron",
     "test": "ember test"
   },
-
 ~~~
 
 Check ember electron works
@@ -65,8 +61,7 @@ Image 2
 Configure ember app for debug
 
 _./config/environment.js_
-~~~ javascript
-
+~~~javascript
   if (environment === 'development') {
     // ENV.APP.LOG_RESOLVER = true;
     ENV.APP.LOG_ACTIVE_GENERATION = true;
@@ -74,24 +69,20 @@ _./config/environment.js_
     ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
     ENV.APP.LOG_VIEW_LOOKUPS = true;
   }
-
 ~~~
 
 Show devtools
 
 _./ember-electron/main.js_
-~~~ Javascript
-
+~~~javascript
 // If you want to open up dev tools programmatically, call
 mainWindow.openDevTools();
-
 ~~~
 
 Remove ember-welcome addon
 
 ./package.json
-~~~ json
-
+~~~json
   "devDependencies": {
     "babel-plugin-transform-async-to-generator": "^6.24.1",
     "babel-preset-env": "^1.7.0",
@@ -125,29 +116,24 @@ Remove ember-welcome addon
     "loader.js": "^4.2.3",
     "qunit-dom": "^0.6.2"
   },
-
 ~~~
 
 
 Delete welcome-page template block for application template
 
 _./app/templates/application.hbs_
-~~~ handlebars
-
+~~~html
 - {{!-- The following component displays Ember's default welcome message. --}}
 - {{welcome-page}}
 - {{!-- Feel free to remove this! --}}
 + <h1>Application</h1>
 
  {{outlet}}
-
 ~~~
 
 _./ember-electron/main.js_
-~~~ javascript
-
+~~~javascript
  app.on('ready', () => {
 +   // Allow process env debug
 +   process.env.debug = true;
-
 ~~~

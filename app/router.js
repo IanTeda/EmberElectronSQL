@@ -7,6 +7,8 @@ const Router = EmberRouter.extend({
 });
 
 Router.map(function() {
+  // Add route '/task' and set to root path '/'
+  this.route('task', { path: '/' });
 });
 
 export default Router;
