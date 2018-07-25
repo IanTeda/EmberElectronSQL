@@ -29,13 +29,17 @@ app.on('window-all-closed', () => {
 });
 
 app.on('ready', () => {
+
+  // Give node log messages color
+  process.env.debug = true;
+
   mainWindow = new BrowserWindow({
     width: 800,
     height: 600,
   });
 
   // If you want to open up dev tools programmatically, call
-  // mainWindow.openDevTools();
+  mainWindow.openDevTools();
 
   const emberAppLocation = 'serve://dist';
 
