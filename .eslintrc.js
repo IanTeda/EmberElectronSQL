@@ -18,6 +18,9 @@ module.exports = {
   },
   rules: {
   },
+  globals: {
+    requireNode: false,
+  },
   overrides: [
     // node files
     {
