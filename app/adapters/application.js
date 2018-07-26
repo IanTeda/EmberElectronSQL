@@ -1,67 +1,3 @@
-# Custom Adapter
-
-## Custom Application Adapter
- 
-Generate custom Ember application adapter
-~ ember generate adapter application
-
-Scaffold minimum custom adapter
-_./app/adapter/application.js_
-~~~javascript
-/**
- * CUSTOM ADAPTER - BOOKSHELF
- * Application adapter will get priority over default Adapter
- * Min overides --> https://emberjs.com/api/ember-data/3.3/classes/DS.Adapter
- */
-import DS from 'ember-data';
-import Ember from 'ember';
-
-
-// Extend RESTAdapter with database calls
-export default DS.RESTAdapter.extend({
-
-  init(){
-    // ... insert code
-  },
-
-  findAll(store, type) {
-    // ... insert code
-  },
-
-  createRecord(store, type, snapshot) {
-    // ... insert code
-  },
-
-  deleteRecord(store, type, snapshot) {
-    // ... insert code
-  },
-
-  updateRecord(store, type, snapshot) {
-    // ... insert code
-  },
-
-  query(store, type, query) {
-    // ... insert code
-  },
-});
-~~~
-
-Add the bookshelf instance and task bookshelf
-~~~javascript
-import Bookshelf from '../bookshelf/bookshelf';
-import Task from '../bookshelf/task';
-~~~
-
-~~~javascript
-init(){
-  this.Bookshelf = Bookshelf;
-  this.Task = Task;
-},
-~~~
-
-Add private helpers
-
-~~~javascript
 /**
  * CUSTOM ADAPTER - BOOKSHELF
  * Application adapter will get priority over default Adapter
@@ -258,4 +194,3 @@ export default DS.RESTAdapter.extend({
     });
   }
 });
-~~~

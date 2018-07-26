@@ -15,9 +15,9 @@
     <div class="d-felx col pb-3">
       <ul class="list-group">
         {{! Loop over the model data array, using task as the singular }}
-        {{#each model as |task|}}
+        {{#each model as |tasks|}}
           <li class="list-group-item justify-content-between d-flex">
-            <span>{{task.title}}</span>
+            <span>{{tasks.task}}</span>
             {{#bs-button class="btn-sm" type="danger" }}DELETE{{/bs-button}}
           </li>
         {{/each}}
