@@ -6,8 +6,8 @@
   </div>
   <div class="row">
     <div class="d-flex col justify-content-between pb-3">
-      {{input value=newTask size="33"}}
-      {{#bs-button type="outline-primary" }}NEW{{/bs-button}}
+      {{input value=priority size="5"}} {{input value=task size="33"}}
+      {{#bs-button type="outline-primary" onClick=(action "addTask" this)}}ADD{{/bs-button}}
     </div>
   </div>
 
@@ -17,8 +17,8 @@
         {{! Loop over the model data array, using task as the singular }}
         {{#each model as |tasks|}}
           <li class="list-group-item justify-content-between d-flex">
-            <span>{{tasks.task}}</span>
-            {{#bs-button class="btn-sm" type="danger" }}DELETE{{/bs-button}}
+            <span>{{tasks.priority}} | {{tasks.task}}</span>
+            {{#bs-button class="btn-sm" type="danger" onClick=(action "removeTask" tasks)}}DELETE{{/bs-button}}
           </li>
         {{/each}}
 

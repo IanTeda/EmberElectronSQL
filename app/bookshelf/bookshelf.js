@@ -28,7 +28,8 @@ function knexConfig() {
         client: 'sqlite3',
         connection: {
             filename
-        }
+        },
+        useNullAsDefault: true
     };
 }
 

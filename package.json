@@ -13,11 +13,12 @@
   "scripts": {
     "build": "ember build",
     "ember": "ember serve",
+    "ember:test": "ember test",
     "lint:js": "eslint .",
     "rebuild": "electron-rebuild -f -w sqlite3",
     "reset:database": "cd ./ember-electron/database && rm ./EmberElectronSQL_empty.sqlite && knex migrate:latest",
     "start": "ember electron",
-    "test": "ember test"
+    "test": "ember electron:test"
   },
   "devDependencies": {
     "babel-plugin-transform-async-to-generator": "^6.24.1",

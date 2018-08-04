@@ -5,6 +5,6 @@
 import DS from 'ember-data';
 
 export default DS.Model.extend({
-  priority: DS.attr('number'),
+  priority: DS.attr('number', { defaultValue: 0 }),
   task: DS.attr('string')
 });

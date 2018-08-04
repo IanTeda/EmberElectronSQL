@@ -4,8 +4,8 @@
  * Min overides --> https://emberjs.com/api/ember-data/3.3/classes/DS.Adapter
  */
 import DS from 'ember-data';
-import Ember from 'ember';
 import { pluralize } from 'ember-inflector';
+import $ from 'jquery';
 
 import Bookshelf from '../bookshelf/bookshelf';
 import Task from '../bookshelf/task';
@@ -33,7 +33,7 @@ export default DS.RESTAdapter.extend({
    * @param {Object} name 
    */
   _modelToItem(model, name) {
-      return Ember.$.extend(true, {
+      return $.extend(true, {
           type: name
       }, model.attributes);
   },
