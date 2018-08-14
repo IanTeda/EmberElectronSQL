@@ -14,23 +14,31 @@ import Task from '../bookshelf/task';
 export default DS.RESTAdapter.extend({
 
   /**
-   * Model From Type
-   * Return model name based on data type
-   * @param {Object} type     Ember data type
-   * @param {Object} reject   Promise rejection/error
+   * MODEL FROM TYPE
+   * Private promise
+   * Return Ember data model name by captilising the bookshelf model 
+   * (database table name) and removing the plural -- i.e. 's'
+   * @param {Object}    type        Ember data model (DS.Model)
+   * @param {Object}    reject      Promise rejection/error
+   * @returns {Pomise}  string      Promise with resulting payload
    */
   _modelFromType(type, reject) {
+    // Construct model name
     const modelName = type.modelName.charAt(0).toUpperCase() + type.modelName.slice(1);
 
+    // If there is a modelName return it
     if (this[modelName]) return this[modelName];
+    // Else throw an error
     reject(new Error(`Model ${type.modelName} not found`));
   },
 
   /**
-   * Model To Item
-   * 
-   * @param {Object} model 
-   * @param {Object} name 
+   * MODEL TO ITEM
+   * Add Ember DS model name to database results object. 
+   * Combine two objects {type: name} & model.attributes
+   * @param {Object}    model       Database results object
+   * @param {Object}    name        Ember data model name 
+   * @returns {Object}  model
    */
   _modelToItem(model, name) {
       return $.extend(true, {
@@ -41,22 +49,25 @@ export default DS.RESTAdapter.extend({
   /**
    * Pluralise Model Name
    * Add an 's' and underscore to data type
-   * @param {Object} type     Ember data type
+   * @param {Object} type       Ember data model (DS.Model)
+   * @returns {String}  model   Model name with an 's'
    */
   _pluralizeModelName(type) {
       return pluralize(type.modelName).underscore();
   },
 
   /**
-   * Am I an object
-   * @param {Object} obj 
+   * IS OBJECT
+   * Check I an object
+   * @param {Object} obj
+   * @returns {boolena}     true/false  Am I an object
    */
   _isObject(obj) {
       return obj === Object(obj);
   },
 
   /**
-   * Serialise if Necassary
+   * SERIALISE IF NECESSARY
    * @param {object} data 
    */
   _serializeIfNecessary(data) {

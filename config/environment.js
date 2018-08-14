@@ -6,6 +6,17 @@ module.exports = function(environment) {
     environment,
     rootURL: '/',
     locationType: 'auto',
+    // https://github.com/knownasilya/ember-toggle
+    'ember-toggle': {
+      includedThemes: ['flip'],
+      excludedThemes: [''],
+      excludeBaseStyles: false, // defaults to false
+      defaultShowLabels: false, // defaults to false
+      defaultTheme: 'default', // defaults to 'default'
+      defaultSize: 'medium', // defaults to 'medium'
+      defaultOffLabel: 'false', // defaults to 'Off'
+      defaultOnLabel: 'flase', // defaults to 'On'
+    },
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build

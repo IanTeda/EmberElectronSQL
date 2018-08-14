@@ -6,8 +6,8 @@
   </div>
   <div class="row">
     <div class="d-flex col justify-content-between pb-3">
-      {{input value=priority size="5"}} {{input value=task size="33"}}
-      {{#bs-button type="outline-primary" onClick=(action "addTask" this)}}ADD{{/bs-button}}
+      {{input value=priority size="5"}} {{input value=name size="33"}}
+      {{#bs-button type="outline-primary" onClick=(action "addTask" task)}}ADD{{/bs-button}}
     </div>
   </div>
 
@@ -15,10 +15,17 @@
     <div class="d-felx col pb-3">
       <ul class="list-group">
         {{! Loop over the model data array, using task as the singular }}
-        {{#each model as |tasks|}}
+        {{#each model as |task|}}
           <li class="list-group-item justify-content-between d-flex">
-            <span>{{tasks.priority}} | {{tasks.task}}</span>
-            {{#bs-button class="btn-sm" type="danger" onClick=(action "removeTask" tasks)}}DELETE{{/bs-button}}
+            <span class=" {{if task.isCompleted 'isCompleted'}}">{{task.priority}} | {{task.name}}</span>
+            <span>
+              {{#if task.isCompleted}}
+                {{#bs-button class="btn-sm" type="warning" onClick=(action "markNotCompleted" task)}}UNDONE{{/bs-button}}
+              {{else}}
+                {{#bs-button class="btn-sm" type="success" onClick=(action "markCompleted" task)}}DONE{{/bs-button}}
+              {{/if}}
+              {{#bs-button class="btn-sm" type="danger" onClick=(action "removeTask" task)}}DELETE{{/bs-button}}
+            </span>
           </li>
         {{/each}}
 

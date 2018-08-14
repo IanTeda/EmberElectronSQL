@@ -6,5 +6,5 @@
 import bookshelf from './bookshelf';
 
 export default bookshelf.Model.extend({
-  tableName: 'tasks', // Note the plural
+  tableName: 'tasks', // NOTE: must be plural ('s') to match database table name
 });

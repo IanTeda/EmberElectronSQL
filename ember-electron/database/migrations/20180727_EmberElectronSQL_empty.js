@@ -11,10 +11,9 @@ exports.up = function(knex, Promise) {
     knex.schema.createTableIfNotExists('tasks', (table) => {
       // Important: ember data needs an ID for each data set
       table.increments('id').primary();
-      table.integer('priority')
-        .notNullable()
-        .defaultTo(0);
-      table.string('task');
+      table.boolean('isCompleted').notNull().defaultTo(false);
+      table.integer('priority').notNull().defaultTo(0);
+      table.string('name');
     }),
   ]);
 };

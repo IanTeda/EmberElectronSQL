@@ -30,6 +30,7 @@
     "electron-forge": "^5.2.2",
     "electron-prebuilt-compile": "2.0.4",
     "ember-ajax": "^3.0.0",
+    "ember-aria-checkbox": "^1.0.5",
     "ember-bootstrap": "^2.0.0",
     "ember-cli": "~3.3.0",
     "ember-cli-app-version": "^3.0.0",
@@ -48,8 +49,10 @@
     "ember-export-application-global": "^2.0.0",
     "ember-load-initializers": "^1.1.0",
     "ember-maybe-import-regenerator": "^0.1.6",
+    "ember-multiselect-checkboxes": "^0.11.1",
     "ember-resolver": "^4.0.0",
     "ember-source": "~3.3.0",
+    "ember-toggle": "^5.3.0",
     "eslint-plugin-ember": "^5.0.0",
     "loader.js": "^4.2.3",
     "qunit-dom": "^0.6.2"
