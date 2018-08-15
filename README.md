@@ -8,7 +8,7 @@ This repository borrows code from [Felix Rieseberg](https://felixrieseberg.com/)
 
 Ember is a framework for ambitious web developers. It is an opinionated web framework incorporating common idioms and best practices. Being a web framework it built around JSON API calls, not local database access. So I couldn't find much information on the internet about plugging in a database.
 
-Ember Observer doesn't have any local database [adapters](https://emberobserver.com/categories/ember-data-adapters). While researching I came across a YouTube video in which Felix discussed Ember Electron and an app he developed called Waffle that uses SQLite.
+Ember Observer doesn't have any local database [adapters](https://emberobserver.com/categories/ember-data-adapters). While researching I came across a [YouTube video](https://youtu.be/_uA5LZk2vmQ?t=16m45s) in which Felix discussed Ember Electron and an app he developed called Waffle that uses SQLite.
 
 To try and understand what was going on I decided to write a test application.
 
