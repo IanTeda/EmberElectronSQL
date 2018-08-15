@@ -26,15 +26,5 @@ export default Controller.extend(Mixin, {
       task.save();
       this.log('Removed task \'' + task.name + '\' from database');
     },
-    markCompleted(task){
-      task.set('isCompleted', true);
-      task.save();
-      this.log('Task \'' + task.name + '\' marked as completed');
-    },
-    markNotCompleted(task){
-      task.set('isCompleted', false);
-      task.save();
-      this.log('Task \'' + task.name + '\' marked as not completed');
-    }
   },
 });

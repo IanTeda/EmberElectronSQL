@@ -1,56 +1,22 @@
-# ember-electron-sql
+# Ember Electron SQL
 
-This README outlines the details of collaborating on this Ember application.
-A short introduction of this app could easily go here.
+This repository is a small [Ember Electron](https://ember-electron.js.org/) SQLite application. Demonstrating how to use SQLite with an Ember Electron application.
 
-## Prerequisites
+This repository borrows code from [Felix Rieseberg](https://felixrieseberg.com/) repository for [Waffle](https://github.com/felixrieseberg/waffle)
 
-You will need the following things properly installed on your computer.
+# The Challenge
 
-* [Git](https://git-scm.com/)
-* [Node.js](https://nodejs.org/) (with npm)
-* [Ember CLI](https://ember-cli.com/)
-* [Google Chrome](https://google.com/chrome/)
+Ember is a framework for ambitious web developers. It is an opinionated web framework incorporating common idioms and best practices. Being a web framework it built around JSON API calls, not database access. So I couldn't find much information on plugging in a database.
 
-## Installation
+Ember Observer doesn't have any local database [adapters](https://emberobserver.com/categories/ember-data-adapters). While researching I came across a YouTube video in which Felix discussed Ember Electron and an app he developed called Waffle that uses SQLite.
 
-* `git clone <repository-url>` this repository
-* `cd ember-electron-sql`
-* `npm install`
+To try and understand what was going on I decided to write a test application.
 
-## Running / Development
 
-* `ember serve`
-* Visit your app at [http://localhost:4200](http://localhost:4200).
-* Visit your tests at [http://localhost:4200/tests](http://localhost:4200/tests).
+# Application Stages
 
-### Code Generators
-
-Make use of the many generators for code, try `ember help generate` for more details
-
-### Running Tests
-
-* `ember test`
-* `ember test --server`
-
-### Linting
-
-* `npm run lint:js`
-* `npm run lint:js -- --fix`
-
-### Building
-
-* `ember build` (development)
-* `ember build --environment production` (production)
-
-### Deploying
-
-Specify what it takes to deploy your app.
-
-## Further Reading / Useful Links
-
-* [ember.js](https://emberjs.com/)
-* [ember-cli](https://ember-cli.com/)
-* Development Browser Extensions
-  * [ember inspector for chrome](https://chrome.google.com/webstore/detail/ember-inspector/bmdblncegkenkacieihfhpjfppoconhi)
-  * [ember inspector for firefox](https://addons.mozilla.org/en-US/firefox/addon/ember-inspector/)
+1. [Project Inititlation](https://github.com/IanTeda/EmberElectronSQL/blob/master/docs/%231%20initilisation.md)
+2. [Application Mock Up](https://github.com/IanTeda/EmberElectronSQL/blob/master/docs/%232%20mock-up.md)
+3. [Database Setup](https://github.com/IanTeda/EmberElectronSQL/blob/master/docs/%233%20database.md)
+4. [Bookshelf (SQL Query Builder)](https://github.com/IanTeda/EmberElectronSQL/blob/master/docs/%234%20bookshelf.md)
+5. [Data Adapter](https://github.com/IanTeda/EmberElectronSQL/blob/master/docs/%235%20adapter.md)
